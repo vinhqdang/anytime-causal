@@ -1,54 +1,192 @@
 [
   {
-    "p": 8,
+    "p": 10,
     "density": 1.5,
-    "n": 1500,
-    "n_graphs": 2,
+    "n": 3000,
+    "n_graphs": 5,
     "noise": "laplace",
     "kind": "er",
-    "varsortability_raw": 1.0,
-    "varsortability_norm": 0.5,
-    "throughput_obs_per_sec": 81.52067225121203,
+    "varsortability_raw": 0.9636363636363636,
+    "varsortability_norm": 0.3918181818181818,
+    "throughput_obs_per_sec": 81.73718994841803,
     "ORACLE": {
-      "shd": 0.5,
-      "sid": 0.5,
-      "skeleton_f1": 0.8333333333333333,
-      "orient_f1": 0.8333333333333333,
+      "shd": 4.6,
+      "sid": 13.6,
+      "skeleton_f1": 0.5472527472527473,
+      "orient_f1": 0.5472527472527473,
       "skeleton_precision": 1.0,
-      "skeleton_recall": 0.75
+      "skeleton_recall": 0.43090909090909085
     },
     "PC_fisherz": {
-      "shd": 2.5,
-      "sid": 5.0,
-      "skeleton_f1": 0.25,
-      "orient_f1": 0.0,
-      "skeleton_precision": 0.25,
-      "skeleton_recall": 0.25
+      "shd": 4.4,
+      "sid": 13.6,
+      "skeleton_f1": 0.6878104351788562,
+      "orient_f1": 0.5882889040783778,
+      "skeleton_precision": 0.8833333333333332,
+      "skeleton_recall": 0.5945454545454545
     },
     "PC_kci_window": {
-      "shd": 1.0,
-      "sid": 1.0,
-      "skeleton_f1": 0.5,
-      "orient_f1": 0.5,
-      "skeleton_precision": 0.5,
-      "skeleton_recall": 0.5
+      "shd": 4.2,
+      "sid": 9.8,
+      "skeleton_f1": 0.6192857142857143,
+      "orient_f1": 0.5192857142857144,
+      "skeleton_precision": 0.85,
+      "skeleton_recall": 0.5045454545454545
     },
     "GES_BIC": {
-      "shd": 1.0,
-      "sid": 1.0,
-      "skeleton_f1": 0.5,
-      "orient_f1": 0.5,
-      "skeleton_precision": 0.5,
-      "skeleton_recall": 0.5
+      "shd": 5.8,
+      "sid": 14.6,
+      "skeleton_f1": 0.613904761904762,
+      "orient_f1": 0.5379047619047619,
+      "skeleton_precision": 0.8555555555555555,
+      "skeleton_recall": 0.5145454545454545
     },
     "oracle_curve": {
       "1000": {
-        "shd": 1.0,
-        "sid": 1.0,
-        "skeleton_f1": 0.6666666666666666,
-        "orient_f1": 0.6666666666666666,
+        "shd": 5.6,
+        "sid": 15.2,
+        "skeleton_f1": 0.41111111111111115,
+        "orient_f1": 0.41111111111111115,
+        "skeleton_precision": 0.8,
+        "skeleton_recall": 0.3181818181818182
+      },
+      "2000": {
+        "shd": 4.4,
+        "sid": 12.4,
+        "skeleton_f1": 0.5726190476190476,
+        "orient_f1": 0.5726190476190476,
+        "skeleton_precision": 0.8,
+        "skeleton_recall": 0.4709090909090909
+      },
+      "3000": {
+        "shd": 4.6,
+        "sid": 13.6,
+        "skeleton_f1": 0.5472527472527473,
+        "orient_f1": 0.5472527472527473,
         "skeleton_precision": 1.0,
-        "skeleton_recall": 0.5
+        "skeleton_recall": 0.43090909090909085
+      }
+    }
+  },
+  {
+    "p": 10,
+    "density": 2.0,
+    "n": 2500,
+    "n_graphs": 4,
+    "noise": "t3",
+    "kind": "sf",
+    "varsortability_raw": 0.8125,
+    "varsortability_norm": 0.53125,
+    "throughput_obs_per_sec": 108.57166918240898,
+    "ORACLE": {
+      "shd": 15.25,
+      "sid": 80.0,
+      "skeleton_f1": 0.08496732026143791,
+      "orient_f1": 0.08496732026143791,
+      "skeleton_precision": 0.5,
+      "skeleton_recall": 0.046875
+    },
+    "PC_fisherz": {
+      "shd": 19.5,
+      "sid": 66.0,
+      "skeleton_f1": 0.5675243215565796,
+      "orient_f1": 0.29479006656426016,
+      "skeleton_precision": 0.5339912280701754,
+      "skeleton_recall": 0.609375
+    },
+    "PC_kci_window": {
+      "shd": 13.25,
+      "sid": 75.5,
+      "skeleton_f1": 0.587037037037037,
+      "orient_f1": 0.22407407407407406,
+      "skeleton_precision": 0.7321428571428572,
+      "skeleton_recall": 0.5
+    },
+    "GES_BIC": {
+      "shd": 23.25,
+      "sid": 55.5,
+      "skeleton_f1": 0.5066479128021952,
+      "orient_f1": 0.33371901396575243,
+      "skeleton_precision": 0.42018518518518516,
+      "skeleton_recall": 0.640625
+    },
+    "oracle_curve": {
+      "1000": {
+        "shd": 15.75,
+        "sid": 80.75,
+        "skeleton_f1": 0.05555555555555555,
+        "orient_f1": 0.027777777777777776,
+        "skeleton_precision": 0.25,
+        "skeleton_recall": 0.03125
+      },
+      "2000": {
+        "shd": 15.75,
+        "sid": 80.75,
+        "skeleton_f1": 0.029411764705882353,
+        "orient_f1": 0.029411764705882353,
+        "skeleton_precision": 0.25,
+        "skeleton_recall": 0.015625
+      }
+    }
+  },
+  {
+    "p": 15,
+    "density": 1.5,
+    "n": 2000,
+    "n_graphs": 2,
+    "noise": "laplace",
+    "kind": "er",
+    "varsortability_raw": 0.9282296650717703,
+    "varsortability_norm": 0.562200956937799,
+    "throughput_obs_per_sec": 51.99787300644047,
+    "ORACLE": {
+      "shd": 10.5,
+      "sid": 29.0,
+      "skeleton_f1": 0.475,
+      "orient_f1": 0.475,
+      "skeleton_precision": 1.0,
+      "skeleton_recall": 0.3133971291866029
+    },
+    "PC_fisherz": {
+      "shd": 12.5,
+      "sid": 56.0,
+      "skeleton_f1": 0.6711229946524064,
+      "orient_f1": 0.4652406417112299,
+      "skeleton_precision": 0.7181818181818183,
+      "skeleton_recall": 0.6339712918660287
+    },
+    "PC_kci_window": {
+      "shd": 10.0,
+      "sid": 62.0,
+      "skeleton_f1": 0.7555555555555555,
+      "orient_f1": 0.39999999999999997,
+      "skeleton_precision": 1.0,
+      "skeleton_recall": 0.6076555023923444
+    },
+    "GES_BIC": {
+      "shd": 10.5,
+      "sid": 39.0,
+      "skeleton_f1": 0.7353383458646616,
+      "orient_f1": 0.5684210526315789,
+      "skeleton_precision": 0.84375,
+      "skeleton_recall": 0.65311004784689
+    },
+    "oracle_curve": {
+      "1000": {
+        "shd": 13.0,
+        "sid": 34.0,
+        "skeleton_f1": 0.2196969696969697,
+        "orient_f1": 0.2196969696969697,
+        "skeleton_precision": 1.0,
+        "skeleton_recall": 0.12440191387559808
+      },
+      "2000": {
+        "shd": 10.5,
+        "sid": 29.0,
+        "skeleton_f1": 0.475,
+        "orient_f1": 0.475,
+        "skeleton_precision": 1.0,
+        "skeleton_recall": 0.3133971291866029
       }
     }
   }

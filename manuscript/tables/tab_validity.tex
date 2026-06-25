@@ -1,0 +1,13 @@
+\begin{table}[htbp]
+\centering
+\caption{Validity audit on a null stream ($p=4$, $K=6$ edges, target $\alpha=0.05$). ORACLE controls error uniformly over the stream; naive optional stopping inflates. ORACLE column uses e-Bonferroni for FWER.}
+\label{tab:validity}
+\begin{tabular}{lcc}
+\hline
+metric & ORACLE (SKIT) & Naive opt.\ stopping \\
+\hline
+max per-edge type-I & \textbf{0.040} & 0.472 \\
+max FWER (any false edge) & \textbf{0.010} & 0.983 \\
+\hline
+\end{tabular}
+\end{table}

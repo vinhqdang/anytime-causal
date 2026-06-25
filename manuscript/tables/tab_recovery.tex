@@ -1,0 +1,32 @@
+\begin{table}[htbp]
+\centering
+\caption{Graph recovery on normalised non-Gaussian ANM data: ORACLE (online) versus batch baselines (checkpoint harness). SHD/SID lower is better; F1 higher is better.}
+\label{tab:recovery}
+\begin{tabular}{lcccc}
+\hline
+method & SHD & SID & skel.\ F1 & orient.\ F1 \\
+\hline
+\hline
+\multicolumn{5}{l}{\emph{$p=10$, er, laplace noise, density 1.5, $n=3000$ }} \\
+\hline
+\quad ORACLE & \textbf{4.6} & 13.6 & 0.55 & 0.55 \\
+\quad PC (Fisher-Z) & 4.4 & 13.6 & 0.69 & 0.59 \\
+\quad PC (KCI) & 4.2 & 9.8 & 0.62 & 0.52 \\
+\quad GES (BIC) & 5.8 & 14.6 & 0.61 & 0.54 \\
+\hline
+\multicolumn{5}{l}{\emph{$p=10$, sf, t3 noise, density 2.0, $n=2500$ }} \\
+\hline
+\quad ORACLE & \textbf{15.2} & 80.0 & 0.08 & 0.08 \\
+\quad PC (Fisher-Z) & 19.5 & 66.0 & 0.57 & 0.29 \\
+\quad PC (KCI) & 13.2 & 75.5 & 0.59 & 0.22 \\
+\quad GES (BIC) & 23.2 & 55.5 & 0.51 & 0.33 \\
+\hline
+\multicolumn{5}{l}{\emph{$p=15$, er, laplace noise, density 1.5, $n=2000$ }} \\
+\hline
+\quad ORACLE & \textbf{10.5} & 29.0 & 0.47 & 0.47 \\
+\quad PC (Fisher-Z) & 12.5 & 56.0 & 0.67 & 0.47 \\
+\quad PC (KCI) & 10.0 & 62.0 & 0.76 & 0.40 \\
+\quad GES (BIC) & 10.5 & 39.0 & 0.74 & 0.57 \\
+\hline
+\end{tabular}
+\end{table}

@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# LaTeX build artifacts (keep manuscript.pdf)
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.blg
+manuscript/*.out
+manuscript/*.spl
+manuscript/*.bbl
+manuscript/*.toc
+# experiment run logs
+results/*.log

@@ -95,9 +95,9 @@ def main(quick=False):
         settings = [
             dict(p=10, density=1.5, n=3000, n_graphs=5, noise="laplace",
                  kind="er", seed0=100),
-            dict(p=10, density=2.0, n=3000, n_graphs=4, noise="t3",
+            dict(p=10, density=2.0, n=2500, n_graphs=4, noise="t3",
                  kind="sf", seed0=200),
-            dict(p=20, density=1.5, n=2500, n_graphs=2, noise="laplace",
+            dict(p=15, density=1.5, n=2000, n_graphs=2, noise="laplace",
                  kind="er", seed0=300),
         ]
     for s in settings:

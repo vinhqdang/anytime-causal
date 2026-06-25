@@ -109,6 +109,7 @@ class SKIT:
         warmup: int = 40,
         bet: str = "mixture",
         lam: float = 0.5,
+        standardize: bool = True,
         seed: int = 0,
     ):
         self.dim_u = dim_u
@@ -118,6 +119,7 @@ class SKIT:
         self.warmup = warmup
         self.bet = bet
         self.lam_fixed = lam
+        self.standardize = standardize
         self.rng = np.random.default_rng(seed)
 
         self._reset_state()
@@ -191,6 +193,8 @@ class SKIT:
         return float(joint - prod)
 
     def _witness_scale(self) -> float:
+        if not self.standardize:
+            return 1.0
         if self._f_count < 5:
             return 1.0
         return float(np.sqrt(self._f_sq_sum / self._f_count) + 1e-8)

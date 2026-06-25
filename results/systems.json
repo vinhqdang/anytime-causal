@@ -1,26 +1,40 @@
 {
-  "n": 400,
+  "n": 800,
   "rows": [
     {
       "p": 5,
       "n_pairs": 10,
       "n_features": 64,
-      "obs_per_sec": 121.13396159199615,
-      "peak_mem_mb": 5.873899
+      "obs_per_sec": 236.24567826081937,
+      "peak_mem_mb": 5.823593
     },
     {
       "p": 10,
       "n_pairs": 45,
       "n_features": 64,
-      "obs_per_sec": 28.7622588613858,
-      "peak_mem_mb": 19.519822
+      "obs_per_sec": 58.647107954750126,
+      "peak_mem_mb": 19.542995
     },
     {
-      "p": 15,
-      "n_pairs": 105,
+      "p": 20,
+      "n_pairs": 190,
       "n_features": 64,
-      "obs_per_sec": 12.976994213349913,
-      "peak_mem_mb": 34.366098
+      "obs_per_sec": 14.689401970204573,
+      "peak_mem_mb": 69.768869
+    },
+    {
+      "p": 30,
+      "n_pairs": 435,
+      "n_features": 32,
+      "obs_per_sec": 6.61281900829149,
+      "peak_mem_mb": 140.6439
+    },
+    {
+      "p": 50,
+      "n_pairs": 1225,
+      "n_features": 32,
+      "obs_per_sec": 2.217422323127891,
+      "peak_mem_mb": 383.441453
     }
   ]
 }
