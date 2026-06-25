@@ -42,7 +42,8 @@ from oracle.ebh import ebh, e_bonferroni
 class _Pair:
     """State for one unordered pair {i, j} with i < j."""
 
-    def __init__(self, i, j, alpha_skel, alpha_orient, n_features, warmup, seed):
+    def __init__(self, i, j, alpha_skel, alpha_orient, n_features, warmup, seed,
+                 bet="mixture"):
         self.i = i
         self.j = j
         self.alpha_skel = alpha_skel
@@ -50,17 +51,18 @@ class _Pair:
         self.n_features = n_features
         self.warmup = warmup
         self.seed = seed
+        self.bet = bet
 
         self.sepset = ()                  # current conditioning set
         self.ci = SKIT_CI(0, alpha=alpha_skel, n_features=n_features,
-                          warmup=warmup, seed=seed)
+                          warmup=warmup, seed=seed, bet=bet)
         # orientation regressors & wealths (bivariate ANM, per direction)
         self.reg_fwd = OnlineRFFRidge(1, warmup=warmup, seed=seed + 11)  # i -> j
         self.reg_rev = OnlineRFFRidge(1, warmup=warmup, seed=seed + 12)  # j -> i
         self.A = SKIT(1, 1, alpha=alpha_orient, n_features=n_features,
-                      warmup=warmup, seed=seed + 13)   # resid_j dep on X_i
+                      warmup=warmup, bet=bet, seed=seed + 13)   # resid_j dep on X_i
         self.B = SKIT(1, 1, alpha=alpha_orient, n_features=n_features,
-                      warmup=warmup, seed=seed + 14)   # resid_i dep on X_j
+                      warmup=warmup, bet=bet, seed=seed + 14)   # resid_i dep on X_j
         self.cusum = PageCUSUM()
 
     def set_sepset(self, S):
@@ -69,7 +71,7 @@ class _Pair:
             self.sepset = S
             self.ci = SKIT_CI(len(S), alpha=self.alpha_skel,
                               n_features=self.n_features, warmup=self.warmup,
-                              seed=self.seed)
+                              seed=self.seed, bet=self.bet)
 
     @property
     def adjacent(self) -> bool:
@@ -91,7 +93,8 @@ class _Pair:
 class ORACLE:
     def __init__(self, p, alpha=0.05, alpha_skel=None, alpha_orient=None,
                  k=2, n_features=64, warmup=40, recond_every=200,
-                 cusum_c=1.0, cusum_h=12.0, multiplicity="ebh", seed=0):
+                 cusum_c=1.0, cusum_h=12.0, multiplicity="ebh", bet="mixture",
+                 seed=0):
         self.p = p
         self.alpha = alpha
         self.alpha_skel = alpha_skel if alpha_skel is not None else alpha
@@ -109,7 +112,7 @@ class ORACLE:
         for i, j in combinations(range(p), 2):
             s = int(rng.integers(1, 1 << 30))
             pr = _Pair(i, j, self.alpha_skel, self.alpha_orient,
-                       n_features, warmup, s)
+                       n_features, warmup, s, bet=bet)
             pr.cusum.c = cusum_c
             pr.cusum.h = cusum_h
             self.pairs[(i, j)] = pr

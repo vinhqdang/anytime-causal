@@ -24,7 +24,8 @@ class SKIT_CI:
     """Test H0: U _||_ V | S from a stream of (u, v, s) triples."""
 
     def __init__(self, dim_s: int, alpha: float = 0.05, n_features: int = 64,
-                 reg_features: int = 128, warmup: int = 40, seed: int = 0):
+                 reg_features: int = 128, warmup: int = 40, seed: int = 0,
+                 bet: str = "mixture"):
         self.dim_s = dim_s
         self.alpha = alpha
         self._unconditional = dim_s == 0
@@ -32,7 +33,7 @@ class SKIT_CI:
             self.reg_u = OnlineRFFRidge(dim_s, reg_features, warmup=warmup, seed=seed + 1)
             self.reg_v = OnlineRFFRidge(dim_s, reg_features, warmup=warmup, seed=seed + 2)
         self.skit = SKIT(dim_u=1, dim_v=1, alpha=alpha, n_features=n_features,
-                         warmup=warmup, seed=seed + 3)
+                         warmup=warmup, bet=bet, seed=seed + 3)
 
     @property
     def wealth(self) -> float:

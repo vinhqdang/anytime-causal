@@ -18,11 +18,15 @@ import networkx as nx
 # Random DAGs
 # --------------------------------------------------------------------------- #
 def random_dag(p: int, density: float = 2.0, kind: str = "er",
-               rng: np.random.Generator | None = None) -> np.ndarray:
+               rng: np.random.Generator | None = None,
+               permute: bool = True) -> np.ndarray:
     """Random DAG adjacency (A[i,j]=1 => i->j) in a fixed topological order.
 
     density : expected number of edges per node (controls edge probability).
     kind : "er" (Erdos-Renyi) or "sf" (scale-free / preferential attachment).
+    permute : if True, randomly relabel nodes (so marginal-variance order does
+              not coincide with index order). Set False to keep the canonical
+              upper-triangular order (used when perturbing graphs in place).
     """
     rng = rng or np.random.default_rng()
     A = np.zeros((p, p), dtype=int)
@@ -38,6 +42,8 @@ def random_dag(p: int, density: float = 2.0, kind: str = "er",
             for j in range(i + 1, p):
                 if rng.random() < prob:
                     A[i, j] = 1
+    if not permute:
+        return A
     # random relabel to avoid trivial variance-ordered topology
     perm = rng.permutation(p)
     return A[np.ix_(perm, perm)]
@@ -132,7 +138,7 @@ def piecewise_stream(p: int, segment_len: int, n_changes: int = 2,
     n_segments = n_changes + 1
     segments = []
     graphs = []
-    base_A = random_dag(p, density, "er", rng)
+    base_A = random_dag(p, density, "er", rng, permute=False)
     for seg in range(n_segments):
         if seg == 0:
             A = base_A

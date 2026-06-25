@@ -1,0 +1,26 @@
+{
+  "n": 400,
+  "rows": [
+    {
+      "p": 5,
+      "n_pairs": 10,
+      "n_features": 64,
+      "obs_per_sec": 121.13396159199615,
+      "peak_mem_mb": 5.873899
+    },
+    {
+      "p": 10,
+      "n_pairs": 45,
+      "n_features": 64,
+      "obs_per_sec": 28.7622588613858,
+      "peak_mem_mb": 19.519822
+    },
+    {
+      "p": 15,
+      "n_pairs": 105,
+      "n_features": 64,
+      "obs_per_sec": 12.976994213349913,
+      "peak_mem_mb": 34.366098
+    }
+  ]
+}

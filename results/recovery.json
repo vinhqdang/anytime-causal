@@ -1,0 +1,55 @@
+[
+  {
+    "p": 8,
+    "density": 1.5,
+    "n": 1500,
+    "n_graphs": 2,
+    "noise": "laplace",
+    "kind": "er",
+    "varsortability_raw": 1.0,
+    "varsortability_norm": 0.5,
+    "throughput_obs_per_sec": 81.52067225121203,
+    "ORACLE": {
+      "shd": 0.5,
+      "sid": 0.5,
+      "skeleton_f1": 0.8333333333333333,
+      "orient_f1": 0.8333333333333333,
+      "skeleton_precision": 1.0,
+      "skeleton_recall": 0.75
+    },
+    "PC_fisherz": {
+      "shd": 2.5,
+      "sid": 5.0,
+      "skeleton_f1": 0.25,
+      "orient_f1": 0.0,
+      "skeleton_precision": 0.25,
+      "skeleton_recall": 0.25
+    },
+    "PC_kci_window": {
+      "shd": 1.0,
+      "sid": 1.0,
+      "skeleton_f1": 0.5,
+      "orient_f1": 0.5,
+      "skeleton_precision": 0.5,
+      "skeleton_recall": 0.5
+    },
+    "GES_BIC": {
+      "shd": 1.0,
+      "sid": 1.0,
+      "skeleton_f1": 0.5,
+      "orient_f1": 0.5,
+      "skeleton_precision": 0.5,
+      "skeleton_recall": 0.5
+    },
+    "oracle_curve": {
+      "1000": {
+        "shd": 1.0,
+        "sid": 1.0,
+        "skeleton_f1": 0.6666666666666666,
+        "orient_f1": 0.6666666666666666,
+        "skeleton_precision": 1.0,
+        "skeleton_recall": 0.5
+      }
+    }
+  }
+]

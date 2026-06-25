@@ -1,0 +1,54 @@
+{
+  "p": 5,
+  "segment_len": 1200,
+  "n_changes": 2,
+  "n_runs": 2,
+  "n_monitored_edges": 8,
+  "drift_c": 0.0,
+  "h_grid": [
+    0.5,
+    1,
+    2,
+    3,
+    5,
+    8,
+    12
+  ],
+  "mean_delay": [
+    null,
+    null,
+    139.0,
+    254.16666666666666,
+    326.85714285714283,
+    430.5,
+    493.0
+  ],
+  "mean_arl": [
+    94.75,
+    132.25,
+    534.5,
+    960.375,
+    1107.875,
+    1200.0,
+    1200.0
+  ],
+  "detection_rate": [
+    0.0,
+    0.0,
+    0.25,
+    0.75,
+    0.875,
+    1.0,
+    1.0
+  ],
+  "ruptures_available": true,
+  "example_change_points": [
+    1200,
+    2400
+  ],
+  "example_ruptures_cps": [
+    1202,
+    2400,
+    3600
+  ]
+}
